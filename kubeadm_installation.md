@@ -125,7 +125,16 @@ sudo kubeadm join 172.31.5.106:6443 --token qq76yq.t5ehmuff7rc03m0e --discovery-
 
    ```
 
-   > Use `sudo` before the token.
+##Verify Containers created: 
+- For Containerd: sudo ctr -n k8s.io containers list
+- List all tasks (running containers): sudo ctr -n k8s.io tasks list
+
+- For CRI-O List all containers: sudo crictl ps -a
+- List running containers: sudo crictl ps
+
+
+
+
 
 ---
 
@@ -135,6 +144,10 @@ sudo kubeadm join 172.31.5.106:6443 --token qq76yq.t5ehmuff7rc03m0e --discovery-
 
 ```bash
 kubectl get nodes
+```
+
+```bash
+kubectl get pods --all-namespaces -o wide
 ```
 
    <img src="https://raw.githubusercontent.com/faizan35/kubernetes_cluster_with_kubeadm/main/Img/nodes-connected.png" width="70%">
