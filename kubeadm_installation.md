@@ -88,6 +88,9 @@ sudo kubeadm config images pull --cri-socket unix:///var/run/crio/crio.sock
 
 sudo kubeadm init
 
+--> If Multiple CRI endpoints on the host issue encountered.
+sudo kubeadm init --cri-socket unix:///var/run/crio/crio.sock
+
 mkdir -p "$HOME"/.kube
 sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
 sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
