@@ -81,6 +81,11 @@ sudo systemctl start kubelet
 ```bash
 sudo kubeadm config images pull
 
+--> If Multiple CRI endpoints on the host issue encountered.
+
+sudo kubeadm config images pull --cri-socket unix:///var/run/crio/crio.sock
+
+
 sudo kubeadm init
 
 mkdir -p "$HOME"/.kube
